@@ -1,0 +1,26 @@
+{
+  "name": "sports-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/23MANIK/Sports-Chat-App.git"
+  },
+  "author": "Nikhil Rajpoot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/23MANIK/Sports-Chat-App/issues"
+  },
+  "homepage": "https://github.com/23MANIK/Sports-Chat-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "*",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.1"
+  }
+}
