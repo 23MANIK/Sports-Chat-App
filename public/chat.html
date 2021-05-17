@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="./css/chat.css">
+
+<body>
+    <div class="chat_box">
+        <header class="chat_header ">
+            <h1 class="header_h1">   🏆Sports Chat</h1>
+            <a href="index.html" class="leave_btn" id="leave_btn">Leave Team</a>
+        </header>
+
+
+        <main class="chat_main">
+            <div class="div_middle">
+                <div class="side_section">
+                    <div class="team_div">
+                        <h2>✊🏼Team Name</h2>
+                        <h3 class="your_team">Your Team</h3>
+                    </div>
+
+                    <div class="users_div">
+                        <h2>👤Users</h2>
+                        <ul id="users"></ul>
+                    </div>
+                </div>
+
+                <div class="chat_messages_div">
+                    <div class="chat_messages">
+                        <!-- <p class="meta">${message.username}<span>${message.time}</span></p>
+                        <p class="text">
+                            ${message.text} -->
+                        <!-- </p> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <div class="msg_box">
+            <form id="chat_form" class="msg_form">
+                <input type="text" class="Cinput" id="msg" placeholder="Enter Your msg here" required autocomplete="off">
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
