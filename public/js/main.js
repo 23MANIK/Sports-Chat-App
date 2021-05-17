@@ -8,5 +8,5 @@ const{username,teams}=Qs.parse(location.search,{
 const socket=io();
 
 
-// socket.emit('joinTeam',{username,teams});
+socket.emit('joinTeam',{username,teams});
 
