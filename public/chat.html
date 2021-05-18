@@ -9,11 +9,36 @@
 </head>
 
 <link rel="stylesheet" href="./css/chat.css">
+<style>
+    .chat_messages {
+        max-height: 425px;
+        /* background-color: white; */
+        overflow-y: scroll;
+        overflow-wrap: break-word;
+    }
+
+    .message {
+
+        margin: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: fit-content;
+       
+        background-color: yellow;
+        overflow-wrap: break-word;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: var(--dark-color-b);
+        opacity: 0.7;
+        margin-bottom: 7px;
+    }
+</style>
 
 <body>
     <div class="chat_box">
         <header class="chat_header ">
-            <h1 class="header_h1">   🏆Sports Chat</h1>
+            <h1 class="header_h1"> 🏆Sports Chat</h1>
             <a href="index.html" class="leave_btn" id="leave_btn">Leave Team</a>
         </header>
 
@@ -46,12 +71,15 @@
 
         <div class="msg_box">
             <form id="chat_form" class="msg_form">
-                <input type="text" class="Cinput" id="msg" placeholder="Enter Your msg here" required autocomplete="off">
+                <input type="text" class="Cinput" id="msg" placeholder="Enter Your msg here" required
+                    autocomplete="off">
                 <button type="submit" class="btn">Send</button>
             </form>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"
+        integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/main.js"></script>
 </body>
