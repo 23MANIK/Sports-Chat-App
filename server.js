@@ -20,6 +20,21 @@ io.on('connection',socket=>{
         console.log(username+"  hello");
     });
 
+    socket.emit('message',"welcome to chat bot !");
+
+    socket.on('chatMessage',msg=>{
+            
+        io.emit('message',msg);
+    })
+
+
+    socket.on('disconnect',()=>{
+        io.emit('message',"a user have left the chat");
+    })
+
+       
+
+
 });
 
 // Run server on env port and at local port
