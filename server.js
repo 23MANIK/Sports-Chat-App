@@ -19,9 +19,9 @@ const botName='Sports Club';
 //Run when client connets
 io.on('connection',socket=>{
 
-    socket.on('joinTeam',({username,team})=>{
-
-        const user=userJoin(socket.id,username,team);
+    socket.on('joinTeam',({username,teams})=>{
+        console.log(teams);
+        const user=userJoin(socket.id,username,teams);
 
         socket.join(user.team);
 
@@ -38,7 +38,6 @@ io.on('connection',socket=>{
         });
     });
 
-    
     //Listen for ChatMessage
     socket.on('chatMessage',msg=>{
         const user=getCurrentUser(socket.id);
@@ -56,8 +55,6 @@ io.on('connection',socket=>{
                 'message',
                 formatMessage(botName,`${user.username} has left the chat`)
             );
-        
-
         //Send users and room info
         io.to(user.team).emit('teamUsers',{room: user.team,users: getTeamUsers(user.team)});
         }
