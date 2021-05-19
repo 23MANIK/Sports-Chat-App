@@ -4,6 +4,7 @@ body{
 h1{
     color: white;
     padding: 5px;
+    font-size: 45px;
     text-align: center;
 }
 .box{
@@ -51,12 +52,13 @@ input {
 .btn{
     width: 150px;
     font-size: medium;
+    background-color: white;
     color: rgb(113, 17, 204);
 }
 .mg{
     position: relative;
     top:10px;
-    font-size: large;
+    font-size: 25px;
     margin: 80px;
     color: white;
 }
