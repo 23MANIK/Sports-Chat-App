@@ -3,6 +3,8 @@ const socketio=require('socket.io');
 const http=require('http')
 const express=require("express");
 const path=require('path');
+const formatMessage=require('./utils/messages');
+const {userJoin,getCurrentUser,userLeave,getTeamUsers}=require('./utils/users');
 
 
 
@@ -13,29 +15,57 @@ const io=socketio(server);
 //setting static path. Path module is used for handling and transforming file paths
 app.use(express.static(path.join(__dirname,'public')));
 
+const botName='Sports Club';
 //Run when client connets
 io.on('connection',socket=>{
 
     socket.on('joinTeam',({username,team})=>{
-        console.log(username+"  hello");
+
+        const user=userJoin(socket.id,username,team);
+
+        socket.join(user.team);
+
+        //Welcome current user
+        socket.emit('message',formatMessage(botName,"Welcome to Sports team Chat"));
+
+        //Broadcast when a user connects
+        socket.broadcast.to(user.team).emit('message',formatMessage(botName,`${user.username} has joined the chat`));
+
+        //Send users and room info
+        io.to(user.team).emit('teamUsers',{
+            team: user.team,
+            users: getTeamUsers(user.team)
+        });
     });
 
-    socket.emit('message',"welcome to chat bot !");
-
+    
+    //Listen for ChatMessage
     socket.on('chatMessage',msg=>{
-            
-        io.emit('message',msg);
-    })
+        const user=getCurrentUser(socket.id);
 
+        io.to(user.team).emit('message',formatMessage(user.username,msg));
+    });
 
+    // Run when client disconnects
     socket.on('disconnect',()=>{
-        io.emit('message',"a user have left the chat");
-    })
+        const user=userLeave(socket.id);
 
-       
+        if(user)
+        {
+            io.to(user.team).emit(
+                'message',
+                formatMessage(botName,`${user.username} has left the chat`)
+            );
+        
+
+        //Send users and room info
+        io.to(user.team).emit('teamUsers',{room: user.team,users: getTeamUsers(user.team)});
+        }
+    });
 
 
 });
+
 
 // Run server on env port and at local port
 const PORT=process.env.PORT||3000;
