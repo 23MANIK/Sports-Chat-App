@@ -11,6 +11,7 @@ const { username, teams } = Qs.parse(location.search, {
 
 const self=username;
 
+
 const socket = io();
 
 
@@ -103,3 +104,6 @@ function outputUsers(users){
 }
 
 //Prompt the user before leave chat room
+
+//title change of page
+document.getElementById("title").innerText=teams;
