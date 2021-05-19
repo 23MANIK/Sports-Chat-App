@@ -15,12 +15,12 @@ const io=socketio(server);
 //setting static path. Path module is used for handling and transforming file paths
 app.use(express.static(path.join(__dirname,'public')));
 
-const botName='Sports Club';
+const botName='sysMsg';
 //Run when client connets
 io.on('connection',socket=>{
 
     socket.on('joinTeam',({username,teams})=>{
-        console.log(teams);
+
         const user=userJoin(socket.id,username,teams);
 
         socket.join(user.team);

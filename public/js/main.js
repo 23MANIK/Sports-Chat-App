@@ -9,6 +9,8 @@ const { username, teams } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
+const self=username;
+
 const socket = io();
 
 
@@ -20,6 +22,8 @@ socket.on('teamUsers',({team,users})=>{
   outputTeamName(team);
   outputUsers(users);
 })
+
+
 
 //Message from server
 socket.on("message", (message) => {
@@ -49,12 +53,29 @@ chatForm.addEventListener("submit", (evt) => {
 //FUNTIONS
 
 function outputMessage(message) { 
-  
+  if(message.username==='sysMsg'){
+    const div=document.createElement('div');
+    div.classList.add("message");
+    div.classList.add("sysMsg");
+    const p=document.createElement("p")
+     p.innerHTML+=`<span>${message.text} : ${message.time}</span>`;
+    div.appendChild(p);
+    document.querySelector('.chat_messages').appendChild(div);
+  }
+  else
+  {
   const div=document.createElement('div');
   div.classList.add("message");
   const p=document.createElement("p")
   p.classList.add("meta");
+
+  if(message.username===self){
+    p.innerText="you : ";
+    div.classList.add("self");
+  }
+  else
   p.innerText=message.username+" : ";
+
   p.innerHTML+=`<span>${message.time}</span>`;
   div.appendChild(p);
   const para=document.createElement('p');
@@ -62,6 +83,7 @@ function outputMessage(message) {
   para.innerText=message.text;
   div.appendChild(para);
   document.querySelector('.chat_messages').appendChild(div);
+  }
 };
 
 //add team name to DOM
