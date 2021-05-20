@@ -32,8 +32,8 @@ A Chating app for multiple sports teams
 
  <img src="images/logo2.png" alt="Logo" width="80%">
  <br/>
-  I created this project for my implementaion of web Developement knowledge to create a real time chat application.
-  In this application we can chat with our frinds by choosing same team name by entering there name and choosing there team. 
+ I created this project for my implementation of web development knowledge to create a real-time chat application.<br/>
+ In this application, we can chat with our friends by choosing the same team name by entering their name and choosing their team. 
  
  ## Features
 
