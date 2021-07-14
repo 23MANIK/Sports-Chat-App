@@ -112,11 +112,16 @@ Follow the instructions below to set up the environment and run this project on 
 * [node.js](https://nodejs.org/en/)
 * [express](https://expressjs.com)
 
+### [](https://github.com/rubychi/udemy-chatapp#backend)Database
+
+* [MongoDb](https://www.mongodb.com)
+
 
 ### [](https://github.com/rubychi/udemy-chatapp#utils)Utils
 
 * [socket.io](https://socket.io)
 * [moment](https://momentjs.com)
+* [mongoosejs](https://mongoosejs.com)
 
 ##  Notes
 
