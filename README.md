@@ -45,6 +45,8 @@ A Chating app for multiple sports teams
     
 -   You can leave a meating and join other just by clicking leave button
 
+-   The chat will be stored
+
  
  
 <!--   The chat messages also show who and when somebody msg in the team room.
