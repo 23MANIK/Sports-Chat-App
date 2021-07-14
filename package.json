@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/23MANIK/Sports-Chat-App#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "env": "^0.0.2",
     "express": "^4.17.1",
     "http": "*",
     "moment": "^2.29.1",

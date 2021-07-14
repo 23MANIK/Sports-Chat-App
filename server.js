@@ -1,12 +1,13 @@
 //getting Starting with required libraries
-
+require("dotenv").config();
 const express=require("express");
 const http=require('http')
 const path=require('path');
+const { PASSWORD } = process.env;
 
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/ChatApp', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb+srv://Niksselfish:sy6YzQBYxfRTFHpj@cluster0.7jdnu.mongodb.net/ChatApp', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb+srv://Niksselfish:${PASSWORD}@cluster0.7jdnu.mongodb.net/ChatApp`, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const socker =require('./socker/index.js');
 const app=express();
