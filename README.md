@@ -10,7 +10,7 @@ A Chating app for multiple sports teams
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://shielded-atoll-74356.herokuapp.com/index.html">
+  <a href="https://shielded-atoll-74356.herokuapp.com/">
     <img src="images/logo1.png" alt="Logo"  width="80%">
   </a>
 
@@ -20,7 +20,7 @@ A Chating app for multiple sports teams
   <p align="center">
     A chating app for different sports teams
     <br />
-    <a href="https://shielded-atoll-74356.herokuapp.com/index.html"><strong>Explore the Project »</strong></a>
+    <a href="https://shielded-atoll-74356.herokuapp.com/"><strong>Explore the Project »</strong></a>
     <br />
     <br />
   </p>
