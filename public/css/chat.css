@@ -144,9 +144,6 @@ font-size: 45px;
     margin-left: auto;
 }
 ul{
-    /* display: flex;
-    justify-content: left;
-    list-style-type: none; */
     display: flex;
 list-style-type: none;
 flex-direction: column;
@@ -239,7 +236,7 @@ li{
     align-items: center;
     } 
     .team_div{
-       margin-top: -15px;
+       margin-top: 0px;
        font-size: xx-small;
        text-align: center;
     }
@@ -282,7 +279,7 @@ li{
         max-width: 60%;
         background-color: yellow;
         overflow-wrap: break-word;
-        font-size: 10px;
+        font-size: 20px;
         font-weight: bold;
         border-radius: 2.5px;
         color: rgb(37, 9, 65);
@@ -294,13 +291,13 @@ li{
         margin-left: auto;
         margin-right: auto;
         color: rgb(36, 34, 34);
-        font-size: 7.5px;
+        font-size: 12px;
      }
 
     .meta{
         color: rgb(36, 34, 34);
-        font-size: 7.5px;
-        margin-bottom: -10px;
+        font-size: 12px;
+        margin-bottom: -15px;
     }
     .self{
         margin-left: auto;
@@ -314,7 +311,6 @@ li{
         width: 90%;
         align-items: center;
         background-color: #66601f;
-        /* margin: 0 3px 0px 2.5px; */
     margin-top: 2px;
     }
   }
